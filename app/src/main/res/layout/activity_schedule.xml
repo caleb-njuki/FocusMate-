@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://tools.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:padding="16dp"
+    tools:context=".ScheduleActivity">
+
+    <TextView
+        android:id="@+id/tvScheduleTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Weekly Focus Schedule"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvScheduleSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tap any cell to name your sessions"
+        android:textColor="#8A8A8A"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/tvScheduleTitle"
+        app:layout_constraintTop_toBottomOf="@id/tvScheduleTitle" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvScheduleSubtitle">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*"
+                android:shrinkColumns="*"
+                android:background="#1E1E1E">
+
+                <TableRow android:background="#1A237E" android:padding="4dp">
+                    <TextView android:text="Day" android:textColor="#FFFFFF" android:textStyle="bold" android:padding="8dp" android:gravity="center"/>
+                    <TextView android:text="S1" android:textColor="#FFFFFF" android:textStyle="bold" android:padding="8dp" android:gravity="center"/>
+                    <TextView android:text="S2" android:textColor="#FFFFFF" android:textStyle="bold" android:padding="8dp" android:gravity="center"/>
+                    <TextView android:text="S3" android:textColor="#FFFFFF" android:textStyle="bold" android:padding="8dp" android:gravity="center"/>
+                    <TextView android:text="S4" android:textColor="#FFFFFF" android:textStyle="bold" android:padding="8dp" android:gravity="center"/>
+                    <TextView android:text="S5" android:textColor="#FFFFFF" android:textStyle="bold" android:padding="8dp" android:gravity="center"/>
+                    <TextView android:text="S6" android:textColor="#FFFFFF" android:textStyle="bold" android:padding="8dp" android:gravity="center"/>
+                    <TextView android:text="S7" android:textColor="#FFFFFF" android:textStyle="bold" android:padding="8dp" android:gravity="center"/>
+                </TableRow>
+
+                <TableRow android:padding="2dp">
+                    <TextView android:text="Mon" android:textColor="#FFFFFF" android:textStyle="bold" android:padding="6dp" android:gravity="center"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                </TableRow>
+
+                <TableRow android:padding="2dp">
+                    <TextView android:text="Tue" android:textColor="#FFFFFF" android:textStyle="bold" android:padding="6dp" android:gravity="center"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                </TableRow>
+
+                <TableRow android:padding="2dp">
+                    <TextView android:text="Wed" android:textColor="#FFFFFF" android:textStyle="bold" android:padding="6dp" android:gravity="center"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                </TableRow>
+
+                <TableRow android:padding="2dp">
+                    <TextView android:text="Thu" android:textColor="#FFFFFF" android:textStyle="bold" android:padding="6dp" android:gravity="center"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                </TableRow>
+
+                <TableRow android:padding="2dp">
+                    <TextView android:text="Fri" android:textColor="#FFFFFF" android:textStyle="bold" android:padding="6dp" android:gravity="center"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                </TableRow>
+
+                <TableRow android:padding="2dp">
+                    <TextView android:text="Sat" android:textColor="#FFFFFF" android:textStyle="bold" android:padding="6dp" android:gravity="center"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                </TableRow>
+
+                <TableRow android:padding="2dp">
+                    <TextView android:text="Sun" android:textColor="#FFFFFF" android:textStyle="bold" android:padding="6dp" android:gravity="center"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                    <EditText android:layout_width="0dp" android:layout_weight="1" android:hint="Empty" android:textColorHint="#555555" android:textColor="#FFFFFF" android:textSize="12sp" android:padding="6dp" android:gravity="center" android:backgroundTint="#4A148C"/>
+                </TableRow>
+
+            </TableLayout>
+        </HorizontalScrollView>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

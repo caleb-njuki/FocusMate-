@@ -58,6 +58,17 @@ class MainActivity : AppCompatActivity() {
         btnOk = findViewById(R.id.btnOk)
 
         tvHistoryLog = findViewById(R.id.tvHistoryLog)
+        val prefs = getSharedPreferences(
+            "FocusMatePrefs",
+            MODE_PRIVATE
+        )
+
+        val history = prefs.getString(
+            "history",
+            "your history appears here"
+        )
+
+        tvHistoryLog.text = history
 
         // 4. Set up what happens when you click "Start / Stop"
         btnStartStop.setOnClickListener {
@@ -172,29 +183,44 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun saveSessionToHistory() {
+
         val stars = ratingBar.rating.toInt()
+
         val comment = etComment.text.toString().trim()
 
-        // Create star icons string based on rating (e.g. ⭐⭐⭐)
         val starIcons = "⭐".repeat(stars)
 
-        // Build a fresh log entry line
-        val newEntry = "Session: $initialTimeSetString\nRating: $starIcons | Note: $comment\n\n"
+        val newEntry =
+            "Session: $initialTimeSetString\n" +
+                    "Rating: $starIcons\n" +
+                    "Comment: $comment\n\n"
 
-        // Append it right above the old history text
-        val currentHistory = tvHistoryLog.text.toString()
-        if (currentHistory.contains("your history appears here")) {
-            // Clear default placeholder on first save
-            tvHistoryLog.text = newEntry
-        } else {
-            tvHistoryLog.text = newEntry + currentHistory
-        }
+        val prefs =
+            getSharedPreferences("FocusMatePrefs", MODE_PRIVATE)
 
-        // Clean up rating entry fields and hide the section again
+        val oldHistory =
+            prefs.getString("history", "") ?: ""
+
+        val updatedHistory =
+            newEntry + oldHistory
+
+        prefs.edit()
+            .putString("history", updatedHistory)
+            .apply()
+
+        tvHistoryLog.text = updatedHistory
+
         ratingBar.rating = 0f
+
         etComment.text.clear()
+
         layoutRatingSection.visibility = View.GONE
-        Toast.makeText(this, "Logged to history!", Toast.LENGTH_SHORT).show()
+
+        Toast.makeText(
+            this,
+            "Logged to history!",
+            Toast.LENGTH_SHORT
+        ).show()
     }
     private fun playAlarmSound() {
         try {

@@ -1,6 +1,8 @@
 package com.example.focusmatepro
 
+import android.content.Context
 import android.os.Bundle
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class HistoryActivity : AppCompatActivity() {
@@ -9,7 +11,16 @@ class HistoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)
 
-        // This screen is successfully linked!
-        // The placeholder UI layout will handle the rest.
+        val tvHistoryPlaceholder =
+            findViewById<TextView>(R.id.tvHistoryPlaceholder)
+
+        val prefs = getSharedPreferences("FocusMatePrefs", Context.MODE_PRIVATE)
+
+        val history = prefs.getString(
+            "history",
+            "Your focus history appears here"
+        )
+
+        tvHistoryPlaceholder.text = history
     }
 }

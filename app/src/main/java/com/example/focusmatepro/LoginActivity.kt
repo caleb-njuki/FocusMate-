@@ -10,6 +10,7 @@ import com.google.android.material.textfield.TextInputEditText
 class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
@@ -17,19 +18,58 @@ class LoginActivity : AppCompatActivity() {
         val etPassword = findViewById<TextInputEditText>(R.id.etPassword)
         val btnLogin = findViewById<Button>(R.id.btnLogin)
 
+        val userPrefs = UserPreferences(this)
+
         btnLogin.setOnClickListener {
+
             val email = etEmail.text.toString().trim()
             val password = etPassword.text.toString().trim()
 
-            // Simple validation check before transitioning
             if (email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Please enter both Email and Password", Toast.LENGTH_SHORT).show()
-            } else {
-                // CHANGED HERE: Now moving cleanly to DashboardActivity instead of MainActivity
-                val intent = Intent(this, DashboardActivity::class.java)
-                startActivity(intent)
-                finish() // Closes LoginActivity so clicking 'Back' doesn't return here
+
+                Toast.makeText(
+                    this,
+                    "Please enter Email and Password",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+                return@setOnClickListener
             }
+
+            // First login = Register
+
+            if (!userPrefs.userExists(email)) {
+
+                userPrefs.saveUser(email, password)
+
+                Toast.makeText(
+                    this,
+                    "Registration Successful",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+            } else {
+
+                if (!userPrefs.validateUser(email, password)) {
+
+                    Toast.makeText(
+                        this,
+                        "Wrong Password",
+                        Toast.LENGTH_SHORT
+                    ).show()
+
+                    return@setOnClickListener
+                }
+            }
+
+            startActivity(
+                Intent(
+                    this,
+                    DashboardActivity::class.java
+                )
+            )
+
+            finish()
         }
     }
 }

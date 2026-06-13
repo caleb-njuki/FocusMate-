@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://tools.android.com/tools"
+    xmlns:tools2="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#121212"
@@ -22,41 +23,35 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_width="395dp"
+        android:layout_height="509dp"
         android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvHistoryTitle">
-
-        <TextView
-            android:id="@+id/tvHistoryIcon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="📜"
-            android:textSize="80sp" />
+        app:layout_constraintTop_toBottomOf="@id/tvHistoryTitle"
+        app:layout_constraintVertical_bias="0.481"
+        tools2:layout_editor_absoluteX="-18dp">
 
         <TextView
             android:id="@+id/tvHistoryPlaceholder"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="355dp"
             android:layout_marginTop="16dp"
+            android:gravity="left|top"
             android:text="Your focus history appears here"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:gravity="center" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvHistorySubtext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Completed pomodoro sessions from your timer will automatically save and sync to this dashboard module."
-            android:textColor="#8A8A8A"
-            android:textSize="14sp"
             android:gravity="center"
-            android:lineSpacingMultiplier="1.2" />
+            android:lineSpacingMultiplier="1.2"
+            android:text="For the next update, Yur history will be listed in dates and bullets"
+            android:textColor="#8A8A8A"
+            android:textSize="14sp" />
 
     </LinearLayout>
 
